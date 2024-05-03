@@ -317,7 +317,8 @@ defmodule Contex.GanttChart do
     cat_data = mapping.accessors.category_col.(row)
     start_time = mapping.accessors.start_col.(row)
     end_time = mapping.accessors.finish_col.(row)
-    title = ~s|#{task_data}: #{start_time} -> #{end_time}|
+    # title = ~s|#{task_data}: #{start_time} -> #{end_time}|
+    title = ~s|<a href="#">#{task_data}: #{start_time} -> #{end_time}</a>|
 
     task_band = OrdinalScale.get_band(task_scale, task_data)
     fill = CategoryColourScale.colour_for_value(cat_scale, cat_data)
